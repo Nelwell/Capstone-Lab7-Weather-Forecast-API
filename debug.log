@@ -1,0 +1,2 @@
+2021-02-24 23:03:42,632 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2021-02-24 23:03:42,897 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/forecast?q=SAINT+PAUL%2CUS&units=imperial&appid=??? HTTP/1.1" 200 15391
