@@ -3,8 +3,8 @@ import requests
 from datetime import datetime
 import logging
 
-logging.basicConfig(filename='debug.log', level=logging.DEBUG, format=f'%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 wx_key = os.environ.get('open_weather_key')  # environment variable
+logging.basicConfig(filename='debug.log', level=logging.DEBUG, format=f'%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 query = {'q': 'minneapolis,us', 'units': 'imperial', 'appid': wx_key}  # dictionary to store params
 url = 'http://api.openweathermap.org/data/2.5/forecast'  # base url
 
@@ -38,7 +38,7 @@ def get_wx_data(location, wx_key):
         data = response.json()  # this may error too, if response is not JSON
         return data, None
     except Exception as e:
-        logging.exception(f'Error decoding respose into JSON')
+        logging.exception(f'Error decoding response into JSON')
         return None, e
 
 
