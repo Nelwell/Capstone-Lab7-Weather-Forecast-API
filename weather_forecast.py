@@ -1,7 +1,9 @@
 import os
 import requests
 from datetime import datetime
+import logging
 
+logging.basicConfig(filename='debug.log', level=logging.DEBUG, format=f'%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 wx_key = os.environ.get('open_weather_key')  # environment variable
 query = {'q': 'minneapolis,us', 'units': 'imperial', 'appid': wx_key}  # dictionary to store params
 url = 'http://api.openweathermap.org/data/2.5/forecast'  # base url
@@ -34,18 +36,16 @@ def get_wx_data(location, wx_key):
         response = requests.get(url, params=query)
         response.raise_for_status()  # Raise exception for 400 or 500 errors
         data = response.json()  # this may error too, if response is not JSON
-        print(data)
         return data, None
     except Exception as e:
-        print(e)
-        print(response.text)  # added for debugging, logging would be better
+        logging.exception(f'Error decoding respose into JSON')
         return None, e
 
 
 def display_wx_forecast(weather_data, location):
     fcst_data_list = weather_data['list']
 
-    print(f'\n*** HERE\'S YOUR {location} 5-DAY FORECAST ***')
+    print(f'\n*** HERE\'S YOUR {location} 3-HOURLY, 5-DAY FORECAST ***')
     for element in fcst_data_list:
         temp = element['main']['temp']
         wind_spd = element['wind']['speed']
