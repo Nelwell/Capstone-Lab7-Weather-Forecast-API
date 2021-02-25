@@ -1,6 +1,0 @@
-2021-02-24 22:41:39,444 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
-2021-02-24 22:41:39,564 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/forecast?q=SAINT+PAUL%2CUS&units=imperial&appid=??? HTTP/1.1" 200 15390
-2021-02-24 22:43:32,015 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
-2021-02-24 22:43:32,143 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/forecast?q=MINNEAPOLIS%2CUS&units=imperial&appid=??? HTTP/1.1" 200 15344
-2021-02-24 22:44:35,509 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
-2021-02-24 22:44:35,633 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/forecast?q=SAINT+PAUL%2CUS&units=imperial&appid=??? HTTP/1.1" 200 15390
